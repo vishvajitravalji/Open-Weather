@@ -8,7 +8,6 @@ https://open-weather-assessment.netlify.app/
 ## Technology/Framework used
 
 - API: https://openweathermap.org/current
-- 
 ## Setup
 To run this project, install it locally using npm:
 

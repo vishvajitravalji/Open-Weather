@@ -7,23 +7,23 @@ import WeatherComponent from "./modules/WeatherInfoComponent";
 const API_KEY = "424aebafb6d2822e62e616b572819112";
 export const WeatherIcons = {
   "01d": "/icons/sunny.svg",
-  '01n': '/icons/night.svg',
-  '02d': '/icons/day.svg',
-  '02n': '/icons/cloudy-night.svg',
-  '03d': '/icons/cloudy.svg',
-  '03n': '/icons/cloudy.svg',
-  '04d': '/icons/perfect-day.svg',
-  '04n': '/icons/cloudy-night.svg',
-  '09d': '/icons/rain.svg',
-  '09n': '/icons/rain-night.svg',
-  '10d': '/icons/rain.svg',
-  '10n': '/icons/rain-night.svg',
-  '11d': '/icons/thunder.svg',
-  '11n': '/icons/thunder.svg',
-  '13d': '/icons/snow.svg',
-  '13n': '/icons/snow.svg',
-  '50d': '/icons/fog.svg',
-  '50n': '/icons/fog.svg',
+  "01n": "/icons/night.svg",
+  "02d": "/icons/day.svg",
+  "02n": "/icons/cloudy-night.svg",
+  "03d": "/icons/cloudy.svg",
+  "03n": "/icons/cloudy.svg",
+  "04d": "/icons/perfect-day.svg",
+  "04n": "/icons/cloudy-night.svg",
+  "09d": "/icons/rain.svg",
+  "09n": "/icons/rain-night.svg",
+  "10d": "/icons/rain.svg",
+  "10n": "/icons/rain-night.svg",
+  "11d": "/icons/thunder.svg",
+  "11n": "/icons/thunder.svg",
+  "13d": "/icons/snow.svg",
+  "13n": "/icons/snow.svg",
+  "50d": "/icons/fog.svg",
+  "50n": "/icons/fog.svg",
 };
 
 const Container = styled.div`
@@ -51,8 +51,6 @@ function App() {
   const [weather, updateWeather] = useState();
   const [error, setError] = useState(null);
 
-
-
   const fetchWeather = (e) => {
     if (e) {
       e.preventDefault();
@@ -69,17 +67,16 @@ function App() {
           setError("City not found");
         });
     }
-  }
+  };
 
   return (
     <Container>
       <AppLabel>Weather App</AppLabel>
-      {city && weather ? (
-        <WeatherComponent weather={weather} city={city} />
-      ) : (
-        <CityComponent updateCity={updateCity} fetchWeather={fetchWeather} />
-      )}
+      <CityComponent updateCity={updateCity} fetchWeather={fetchWeather} />
       {error && <p>{error}</p>}
+      {weather && error === null && (
+        <WeatherComponent weather={weather} city={city} />
+      )}
     </Container>
   );
 }

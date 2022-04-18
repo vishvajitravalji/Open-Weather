@@ -5,7 +5,7 @@ const SearchBox = styled.form`
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  margin: 20px;
+  margin: 10px;
   border: black solid 1px;
   border-radius: 2px;
 
@@ -31,15 +31,16 @@ const SearchBox = styled.form`
 `;
 const ChooseCityLabel = styled.span`
   color: black;
-  margin: 10px auto;
-  font-size: 18px;
+  margin: 2px 2px;
+  font-size: 12px;
   font-weight: bold;
 `;
 const WelcomeWeatherLogo = styled.img`
-  width: 140px;
-  height: 140px;
-  margin: 40px auto;
+  width: 80px;
+  height: 80px;
+  margin: 10px auto;
 `;
+
 const CityComponent = (props) => {
   const { updateCity, fetchWeather } = props;
   return (

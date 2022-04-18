@@ -11,36 +11,31 @@ export const WeatherInfoIcons = {
 };
 
 const Location = styled.span`
-  margin: 15px auto;
+  margin: 10px auto;
   text-transform: capitalize;
-  font-size: 28px;
+  font-size: 20px;
   font-weight: bold;
 `;
+
 const Condition = styled.span`
-  margin: 20px auto;
+  margin: 10px auto;
   text-transform: capitalize;
   font-size: 14px;
   & span {
     font-size: 28px;
   }
 `;
-const WeatherInfoLabel = styled.span`
-  margin: 20px 25px 10px;
-  text-transform: capitalize;
-  text-align: start;
-  width: 90%;
-  font-weight: bold;
-  font-size: 14px;
-`;
+
 const WeatherIcon = styled.img`
-  width: 100px;
-  height: 100px;
+  width: 70px;
+  height: 70px;
   margin: 5px auto;
 `;
+
 const WeatherContainer = styled.div`
   display: flex;
+  margin-top: 30px;
   width: 100%;
-  margin: 30px auto;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -53,7 +48,9 @@ const WeatherInfoContainer = styled.div`
   justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap;
+  border: 1px solid #ccc;
 `;
+
 const InfoContainer = styled.div`
   display: flex;
   margin: 5px 10px;
@@ -61,10 +58,12 @@ const InfoContainer = styled.div`
   justify-content: space-evenly;
   align-items: center;
 `;
+
 const InfoIcon = styled.img`
   width: 36px;
   height: 36px;
 `;
+
 const InfoLabel = styled.span`
   display: flex;
   flex-direction: column;
@@ -106,8 +105,6 @@ const WeatherComponent = (props) => {
         <WeatherIcon src={WeatherIcons[weather?.weather[0].icon]} />
       </WeatherContainer>
       <Location>{`${weather?.name}, ${weather?.sys?.country}`}</Location>
-
-      <WeatherInfoLabel>Weather Info</WeatherInfoLabel>
       <WeatherInfoContainer>
         <WeatherInfoComponent
           name={isDay ? "sunset" : "sunrise"}
